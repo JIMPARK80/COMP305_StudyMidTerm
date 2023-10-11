@@ -9,8 +9,7 @@ public class MoveNoPhysics : MonoBehaviour
     private float moveSpeed = 5f;
     [SerializeField]
     private float jumpForce = 5f;
-
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private bool isGrounded = false;
 
@@ -26,21 +25,25 @@ public class MoveNoPhysics : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+            Debug.Log("LeftArrow key pushed");
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
+            Debug.Log("RightArrow Key pushed");
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && isGrounded)
+        else if (Input.GetKey(KeyCode.UpArrow) && isGrounded == true)
         {
             Jump();
+            Debug.Log("UpArrow Key pushed");
         }
+        else
+            return;
     }
 
     private void Jump()
     {
-        isGrounded = false;
-        rb.velocity = Vector2.up * jumpForce; 
+        transform.position += Vector3.up * jumpForce * Time.deltaTime;
     }
 
     private void OnCollisionEnter2D(Collision2D other)

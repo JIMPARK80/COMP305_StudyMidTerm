@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21957568}
   - component: {fileID: 21957569}
-  - component: {fileID: 21957572}
+  - component: {fileID: 21957574}
   - component: {fileID: 21957573}
   - component: {fileID: 21957571}
   - component: {fileID: 21957570}
@@ -273,20 +273,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &21957572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21957567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78478a6df499ec84393513b3807c6aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveForce: 10
-  jumpForce: 10
 --- !u!114 &21957573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +286,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 12
+  jumpForce: 10
+--- !u!114 &21957574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21957567}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78478a6df499ec84393513b3807c6aa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveForce: 2
+  jumpForce: 5
 --- !u!1 &324029601
 GameObject:
   m_ObjectHideFlags: 3
@@ -1012,7 +1012,7 @@ GameObject:
   - component: {fileID: 1464940600}
   m_Layer: 0
   m_Name: box
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1327,7 +1327,7 @@ GameObject:
   - component: {fileID: 1752047602}
   m_Layer: 0
   m_Name: LevelTilemap
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
