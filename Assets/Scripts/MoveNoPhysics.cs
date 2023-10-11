@@ -11,15 +11,11 @@ public class MoveNoPhysics : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 5f;
     [SerializeField]
-    private float jumpForce = 5f;
-    private Rigidbody2D rb;
-
-    private bool isGrounded = false;
+    private float jumpForce = 10f;
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -31,51 +27,36 @@ public class MoveNoPhysics : MonoBehaviour
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
             Debug.Log("LeftArrow key pushed");
 
-            // setting up animation when push leftArrow
+            // setting up animation for leftArrow
             animator.SetBool("isRunning", true);
 
             // player turning left
             transform.localScale = new Vector3(-1, 1, 1);
-
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             Debug.Log("RightArrow Key pushed");
 
-            // setting up animation when push rightArrow
+            // setting up animation for rightArrow
             animator.SetBool("isRunning", true);
 
             // player turning right
             transform.localScale = new Vector3(1, 1, 1);
-
-
         }
-        else if (Input.GetKey(KeyCode.UpArrow) && isGrounded == true)
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
-            Jump();
+            transform.position += Vector3.up * jumpForce * Time.deltaTime;
             Debug.Log("UpArrow Key pushed");
+
+            // setting up animator for jumping
+            animator.SetBool("isJumping", true);
         }
         else
         {
-            // animator set up
+            
             animator.SetBool("isRunning", false);
-            return;
-        }
-        
-        
-    }
-
-    private void Jump()
-    {
-        transform.position += Vector3.up * jumpForce * Time.deltaTime;
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Ground")
-        {
-            isGrounded = true;
-        }
+            animator.SetBool("isJumping", false);
+        }       
     }
 }

@@ -585,7 +585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83261e87b4616994c92ede58813f6772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
+  cameraTransform: {fileID: 562313256}
   shakeFrequency: 0.5
 --- !u!1 &733257966
 GameObject:
@@ -601,7 +601,6 @@ GameObject:
   - component: {fileID: 733257971}
   - component: {fileID: 733257970}
   - component: {fileID: 733257972}
-  - component: {fileID: 733257973}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -783,20 +782,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
---- !u!114 &733257973
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733257966}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78478a6df499ec84393513b3807c6aa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveForce: 2
-  jumpForce: 5
 --- !u!1 &901317687
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83261e87b4616994c92ede58813f6772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
+  cameraTransform: {fileID: 1309857883}
   shakeFrequency: 0.5
 --- !u!1 &1361948641
 GameObject:
@@ -1474,7 +1459,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83261e87b4616994c92ede58813f6772, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
+  cameraTransform: {fileID: 1558255411}
   shakeFrequency: 0.5
 --- !u!1 &1752047597
 GameObject:
