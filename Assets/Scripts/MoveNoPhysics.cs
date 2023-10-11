@@ -5,6 +5,9 @@ using UnityEngine;
 public class MoveNoPhysics : MonoBehaviour
 {
 
+    // add Animation
+    private Animator animator;
+
     [SerializeField]
     private float moveSpeed = 5f;
     [SerializeField]
@@ -16,7 +19,8 @@ public class MoveNoPhysics : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -26,11 +30,15 @@ public class MoveNoPhysics : MonoBehaviour
         {
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
             Debug.Log("LeftArrow key pushed");
+
+            // animation set up
+            animator.SetBool("isRunning", true);
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             Debug.Log("RightArrow Key pushed");
+            animator.SetBool("isRunning", true);
         }
         else if (Input.GetKey(KeyCode.UpArrow) && isGrounded == true)
         {
@@ -38,7 +46,13 @@ public class MoveNoPhysics : MonoBehaviour
             Debug.Log("UpArrow Key pushed");
         }
         else
+        {
+            // animator set up
+            animator.SetBool("isRunning", false);
             return;
+        }
+        
+        
     }
 
     private void Jump()
