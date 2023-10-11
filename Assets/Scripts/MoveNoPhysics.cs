@@ -31,14 +31,25 @@ public class MoveNoPhysics : MonoBehaviour
             transform.position += Vector3.left * moveSpeed * Time.deltaTime;
             Debug.Log("LeftArrow key pushed");
 
-            // animation set up
+            // setting up animation when push leftArrow
             animator.SetBool("isRunning", true);
+
+            // player turning left
+            transform.localScale = new Vector3(-1, 1, 1);
+
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.position += Vector3.right * moveSpeed * Time.deltaTime;
             Debug.Log("RightArrow Key pushed");
+
+            // setting up animation when push rightArrow
             animator.SetBool("isRunning", true);
+
+            // player turning right
+            transform.localScale = new Vector3(1, 1, 1);
+
+
         }
         else if (Input.GetKey(KeyCode.UpArrow) && isGrounded == true)
         {
