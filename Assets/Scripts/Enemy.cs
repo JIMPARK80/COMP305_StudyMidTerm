@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
             Debug.Log("Ground");
+            GameManager.instance.AddScore();
         }
         else if (other.gameObject.tag == "Player")
         {

@@ -13,6 +13,15 @@ public class GameManager : MonoBehaviour
 
     private int score = 0;
 
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
+
     void Start()
     {
         
@@ -27,6 +36,6 @@ public class GameManager : MonoBehaviour
     public void AddScore()
     {
         score += 1;
-        scoreText.text = "Score" + score;
+        scoreText.text = "Score: " + score;
     }
 }
