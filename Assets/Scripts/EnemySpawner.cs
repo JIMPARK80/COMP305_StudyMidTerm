@@ -48,8 +48,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
-        float posX = Random.Range(leftSideSpawn, rightSideSpawn);
-        Vector3 position = new Vector3(posX, 20, 0);
+        // float posX = Random.Range(leftSideSpawn, rightSideSpawn);
+        Vector3 position = new Vector3(transform.position.x, transform.position.y, 0);
         int index = Random.Range(0, Enemies.Length);
         Instantiate(Enemies[index], position, Quaternion.identity);
     }

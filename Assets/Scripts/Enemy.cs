@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
     void Update()
     {
         // Get the target position but only use the X coordinate
-        Vector3 targetPosition = new Vector3(targetTransform.position.x, 0, 0);
+        Vector3 targetPosition = new Vector3(targetTransform.position.x, transform.position.y, transform.position.z);
 
         // Calculate the direction to move (only along the X-axis)
         Vector3 moveDirection = (targetPosition - transform.position).normalized;
