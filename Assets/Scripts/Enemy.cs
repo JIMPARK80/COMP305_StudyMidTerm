@@ -8,6 +8,15 @@ public class Enemy : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if(other.gameObject.tag == "Ground")
+        {
+            Destroy(gameObject);
+            Debug.Log("Ground");
+        }
+        else if (other.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+            Debug.Log("Player");
+        }
     }
 }
